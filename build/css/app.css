@@ -355,6 +355,9 @@ body {
 body.fijar-body {
   overflow: hidden;
 }
+body.body-scroll {
+  padding-top: 8.6rem;
+}
 
 p {
   font-size: 2rem;
@@ -396,6 +399,15 @@ img {
 
 .header {
   background-color: #4cb8b3;
+}
+@media (min-width: 768px) {
+  .header.fijo {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0.1rem 0.2rem 0.3rem #333;
+  }
 }
 .header h1 {
   color: #fff;
@@ -660,4 +672,72 @@ img {
 }
 .btn-cerrar:hover {
   cursor: pointer;
+}
+
+.entradas {
+  padding: 5rem 0;
+}
+.entradas h3 {
+  text-align: center;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .entradas .contenedor-entradas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.entrada .nombre-entrada {
+  text-align: center;
+  color: #fff;
+  font-size: 2.8rem;
+}
+.entrada .header-entrada,
+.entrada .footer-entrada {
+  padding: 0.5rem;
+}
+.entrada .header-entrada p,
+.entrada .footer-entrada p {
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+.entrada .header-entrada {
+  background-color: #f53756;
+}
+.entrada .header-entrada p {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+.entrada .cuerpo-entrada {
+  background-color: #fff;
+}
+.entrada .cuerpo-entrada ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.entrada .cuerpo-entrada ul li, .entrada .cuerpo-entrada ul :nth-child(odd) {
+  background-color: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.entrada .footer-entrada {
+  background-color: #782f97;
+}
+.entrada .footer-entrada p {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.site-footer {
+  background-color: #f53756;
+  padding: 1rem;
+}
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  color: #fff;
 }

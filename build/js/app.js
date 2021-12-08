@@ -3,7 +3,39 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const iniciarApp = () => {
+    navegacionFija();
     crearGaleria();
+    scrollNav();
+}
+
+const navegacionFija = () => {
+    const nav = document.querySelector('.header');
+    const sobre = document.querySelector('.sobre-festival');
+    const body = document.querySelector('body');
+
+    window.addEventListener('scroll', () => {
+        if(sobre.getBoundingClientRect().top < 0){
+            nav.classList.add('fijo');
+            body.classList.add('body-scroll');
+        } else {
+            nav.classList.remove('fijo');
+            body.classList.remove('body-scroll');
+        }
+    })
+}
+
+const scrollNav = () => {
+    const enlaces = document.querySelectorAll('.navegacion-principal a');
+    enlaces.forEach(enlace => {
+        enlace.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const seccionScroll = e.target.attributes.href.value;
+            const seccion = document.querySelector(seccionScroll);
+
+            seccion.scrollIntoView({ behavior: 'smooth'});
+        })
+    })
 }
 
 const crearGaleria = () => {
